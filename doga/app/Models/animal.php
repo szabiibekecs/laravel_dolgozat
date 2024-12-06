@@ -11,7 +11,7 @@ class animal extends Model
     protected $fillable = ['user_id','shelter_id','breed_id','name','sex','age'];
 
     public function user() {
-        return $this->belonsToMany(User::class);
+        return $this->belongsToMany(User::class);
     }
 
     public function shelter(){

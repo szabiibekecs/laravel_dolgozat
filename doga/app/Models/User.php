@@ -6,6 +6,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use app\Models\animal;
+use app\Models\role;
 
 class User extends Authenticatable
 {
@@ -44,5 +46,13 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function animal(){
+        return $this->belongsToMany(animal::class);
+    }
+
+    public function role(){
+        return $this->belongsToMany(role::class);
     }
 }

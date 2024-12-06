@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('species_id');
             $table->string('name');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

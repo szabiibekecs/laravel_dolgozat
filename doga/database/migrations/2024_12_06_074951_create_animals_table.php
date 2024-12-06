@@ -20,6 +20,7 @@ return new class extends Migration
             $table->boolean('sex');
             $table->integer('age');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
